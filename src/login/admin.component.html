@@ -1,6 +1,9 @@
 <div [hidden]="adminAuthenticated">
         
          <form #userForm="ngForm" class="example-form" (ngSubmit)="adminlogin(userForm.value)">
+            <mat-error *ngIf="adminLoginError">
+                Invalid login credentials
+              </mat-error>
              <mat-form-field class="example-full-width">
                <input matInput ngModel name="adminusername" type="text" placeholder="admin username">
              </mat-form-field>

@@ -1,6 +1,9 @@
     <div [hidden]="userAuthenticated">
        
         <form #userForm="ngForm" class="example-form" (ngSubmit)="userlogin(userForm.value)">
+            <mat-error *ngIf="userLoginError">
+                Invalid login credentials
+              </mat-error>
             <mat-form-field class="example-full-width">
               <input matInput ngModel name="username" placeholder="username">
             </mat-form-field>
@@ -8,9 +11,7 @@
                 <input matInput ngModel name="password" type="password" placeholder="password">
               </mat-form-field>
             <button mat-button type="submit">Login!</button>
-           
-          </form>
-         
+          </form>        
     </div>
 
     

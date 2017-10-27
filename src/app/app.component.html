@@ -1,12 +1,13 @@
-
+<div  style="width:100%">
 <mat-toolbar color="primary">
     <span>App</span>
     <span class="example-spacer"></span>
-    <mat-icon class="example-icon">verified_user</mat-icon>
+    
     <button [hidden]="userAuthenticated || adminAuthenticated" style="background-color: transparent ;border: none;color: white" routerLink="userlogin">User Login</button>
     <button [hidden]="userAuthenticated || adminAuthenticated" style="background-color: transparent ;border: none;color: white" routerLink="adminlogin">Admin Login</button>
     <button mat-button (click)="logout()">logout</button>
 </mat-toolbar>
+</div>
   <router-outlet (activate)="changeOfRoutes()"></router-outlet>
 
 

@@ -13,6 +13,7 @@ export class AdminComponent{
     adminAuthenticated:boolean=this.localStorageService.get("adminAuthenticated")==null ? false:Boolean(this.localStorageService.get("adminAuthenticated"));
     loginData:any=null;
     adminame:string;
+    adminLoginError;
     constructor(
         private appService:AppService,
         private localStorageService:LocalStorageService
@@ -29,6 +30,9 @@ export class AdminComponent{
                     this.localStorageService.set("adminUsername", admin.username);
                     this.localStorageService.set("adminAuthenticated", true);
                     this.adminAuthenticated=true;
+                    this.adminLoginError=false;
+                }else{
+                    this.adminLoginError=true;
                 }
             });
             if(this.adminAuthenticated){

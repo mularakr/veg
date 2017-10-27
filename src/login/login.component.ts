@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     username:string;
     password:string;
     records: Array<any>;
-    
+    userLoginError;
     index:any=0;
     constructor(
         private appService:AppService,
@@ -47,6 +47,9 @@ export class LoginComponent implements OnInit {
                 this.localStorageService.set("customerUsername", child.username);
                 this.localStorageService.set("userAuthenticated", true);
                 this.userAuthenticated=true;
+                this.userLoginError=false;
+            }else{
+                this.userLoginError=true;
             }
         });
        
